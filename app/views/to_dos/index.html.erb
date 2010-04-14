@@ -1,0 +1,23 @@
+<h1>To Do List</h1>
+
+<table>
+  <tr>
+  	<th>Description</th>
+  	<th>Due On</th>
+  	<th span="3">Actions</th>
+  </tr>
+
+<% @to_dos.each do |to_do| %>
+  <tr>
+  	<td><%=to_do.description%> </td>
+  	<td><%=to_do.due_on%>	
+    <td><%= link_to 'Show', to_do %></td>
+    <td><%= link_to 'Edit', edit_to_do_path(to_do) %></td>
+    <td><%= link_to 'Destroy', to_do, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New to_do', new_to_do_path %>
