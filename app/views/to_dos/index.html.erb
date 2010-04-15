@@ -1,6 +1,6 @@
 <h1>To Do List</h1>
 
-<table>
+<table border=0>
   <tr>
   	<th>Description</th>
   	<th>Due On</th>
@@ -9,10 +9,10 @@
 
 <% @to_dos.each do |to_do| %>
   <tr>
+	<td><%= link_to to_do.id, to_do %></td>
   	<td><%=to_do.description%> </td>
   	<td><%=to_do.due_on%>	
-    <td><%= link_to 'Show', to_do %></td>
-    <td><%= link_to 'Edit', edit_to_do_path(to_do) %></td>
+    <td><%= link_to 'edit', edit_to_do_path(to_do) %></td>
     <td><%= link_to 'Destroy', to_do, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
